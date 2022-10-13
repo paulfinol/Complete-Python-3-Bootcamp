@@ -1,0 +1,340 @@
+check a number is even or not 
+% use to get the rest of a division (/) if 0 then is even otherwise different uneven
+Python3 is able to perform true division 7//4 = 2.3
+// operator (two forward slashes representing floor division) truncates the decimal without rounding --- 7//4 = 1
+you do need to keep in mind that it’s not decimal arithmetic and that every float operation can suffer a new rounding error.
+** for Powers --- 2**3 = 8 or root 4**0.5 + 2.0
+
+Variable
+
+Names can not start with a number.
+There can be no spaces in the name, use _ instead.
+Can't use any of these symbols :'",<>/?|\()!@#$%^&*~-+
+best practice to use lowercase
+
+
+First, dynamically-typed languages perform type checking at runtime
+statically typed languages perform type checking at compile time. 
+Scripts dynamically-typed can compile even if they contain errors 
+that will prevent the script from running properly (if at all). 
+
+script statically-typed language contains errors,
+it will fail to compile until the errors have been fixed.
+
+statically-typed languages require you to declare the data types of your variables before you use them
+dynamically-typed languages do not.
+
+dynamically-typed variables can be assigned different data types
+statically-typed can only be assigned one data type
+
+Strings 
+Ordered sequence
+Indexing [] and slicing can be applied to it
+Index (0.,1,2,3,4) o reverse index (0 first letter and -1 last letter)
+slicing [start:stop:step] 
+counting always from 0, start= includes, stop= UP TO but not included, step= pick de n en n including 0
+reverse string mysttring [::-1]
+functions for strings
+print (""), 
+Python's built-in len() function counts all of the characters in the string, including spaces and punctuation len (yes) = 3
+
+strings are inmutable , can change one letter of a string. need to be sliced and then concatenate
+concatenate fucntion (+) works for numbers and strings
+
+Basic Built-in String methods
+string.split() or string.lower() or string.upper()
+
+
+String Presentation
+
+.format()
+format objects into your strings for print statements with the string .format() method. The syntax is:
+'String here {} then also {}'.format('something1','something2')
+1. Inserted objects can be called by index position:
+print('The {2} {1} {0}'.format('fox','brown','quick'))
+ Inserted objects can be assigned keywords:
+print('First Object: {a}, Second Object: {b}, Third Object: {c}'.format(a=1,b='Two',c=12.3))
+3. Inserted objects can be reused, avoiding duplication:
+print('A %s saved is a %s earned.' %('penny','penny'))
+# vs.
+print('A {p} saved is a {p} earned.'.format(p='penny'))
+
+	Float formatting follows "result: {value:{width}.{precision}}"
+	num = 23.45
+	print("My 10 character, four decimal number is:{0:10.4f}".format(num))
+	print(f"My 10 character, four decimal number is:{num:10.4f}")
+	My 10 character, four decimal number is:   23.4500
+	My 10 character, four decimal number is:   23.4500
+
+(f-strings)
+name = 'Fred'
+print(f"He said his name is {name}.")
+He said his name is Fred.
+Pass !r to get the string representation:
+
+List []
+allows different data types
+slice, indexing, concatenate works just like strings
+difference from string, the list is mutable. internal elements can be changed or mutated
+methods allows to perform operations over the list
+
+Dictionaries {}
+
+Are not order and canot be sorted
+objects retrieve by key name
+choose a dictionaries over a list when need to lookup a value for a key
+supports different types of elements
+nested objects: to select an list inside a list or a list inside a dictionarie just need to stack  list[][]
+can add, mod withot methods just for ex. d['k3']=300
+some methods d.keys(), d.values(), d.items()
+
+tuples ()
+like list but inmutable
+use parenthesis not brackets
+passing objects to the program and make sure it wont be modified
+
+sets {}
+unordered collection of unique objects
+useful to select unique values from a list
+set(mylist)
+
+booleans
+CAPITA -- True and False
+None is a data type that can be assigned to a variable
+
+Files
+
+myfile = open('myfile.txt')
+myfile.read() reads everything in one line
+the cursor goes to the end of the file after ran it. needs to be reseted to use it again
+myfile.seek(0)
+myfile.readlines()  reads lines and separate them
+myfile.close() best practice to close files in case another program needs to use it unless is open temporarily in another variable
+with open('myfile.txt') as my new_file:
+    contents = myf_new_file.read()
+
+SHIFT+TAB to get information about the built-in functions
+
+There are 6 access modes in python.
+
+Read Only (‘r’) : Open text file for reading. The handle is positioned at the beginning of the file. If the file does not exists, raises I/O error. This is also the default mode in which file is opened.
+Read and Write (‘r+’) : Open the file for reading and writing. The handle is positioned at the beginning of the file. Raises I/O error if the file does not exists.
+Write Only (‘w’) : Open the file for writing. For existing file, the data is truncated and over-written. The handle is positioned at the beginning of the file. Creates the file if the file does not exists.
+Write and Read (‘w+’) : Open the file for reading and writing. For existing file, data is truncated and over-written. The handle is positioned at the beginning of the file.
+Append Only (‘a’) : Open the file for writing. The file is created if it does not exist. The handle is positioned at the end of the file. The data being written will be inserted at the end, after the existing data.
+Append and Read (‘a+’) : Open the file for reading and writing. The file is created if it does not exist. The handle is positioned at the end of the file. The data being written will be inserted at the end, after the existing data.
+
+with open('myfile.txt', mode ='r or w or a+ etc') as my new_file:
+    contents = myf_new_file.read()
+
+Python Logical Operators
+NOT
+Reverse the result, returns False if the result is true
+
+Python Statements
+if
+elif --- else if
+else
+
+For Loops
+
+my_iterable= [1,2,3]
+for iterable in my_iterable:
+	print (iterable)
+
+when de iterable variable wont be used later and just need to go over all the values is common to replace it with _
+technically is the the value to be iterated is a string, there is no need to define it
+
+for _ in 'String':
+	print (iterable)
+
+tuple unpacking
+list = [(1,2),(3,4),(5,6)]
+for a,b in list
+	print(a,b)
+	print (a)
+	print (b)
+
+for in dictionaries
+d = {'k1':1,'k2':2,'k3':3}
+for item in d:	--- by default d represents only the values
+    print(item)
+for k,v in d.items():	d.items to get Key and values togehter then is similar to tuple unpacking
+    print(k,v)
+    print(k)
+    print(v) 
+
+there is no guarantee that the result will be sorted because is not a carachteristic of dictionaries
+
+While
+while some_boolean_condition:
+	do somenthing
+else:
+	do something different
+
+break: Breaks out of the current closest enclosing loop. ---- finish loop in current value
+continue: Goes to the top of the closest enclosing loop. --- ignore current vlaue and continue with next
+pass: Does nothing at all. --- maybe as temporal loop not used than only continues
+
+Other operators
+
+range(start, stop, step)
+returns a sequence of numbers, starting from 0 by default, and increments by 1 (by default), and stops before a specified number.
+
+enumerate(iterable, start=0)
+Parameters:
+Iterable: any object that supports iteration
+Start: the index value from which the counter is 
+              to be started, by default it is 0
+returns: iteration number (i) and current value (a , b, c, d, e)
+
+for i,letter in enumerate('abcde'):
+    print("At index {} the letter is {}".format(i,letter))
+At index 0 the letter is a
+
+zip, like terraform
+returns a zip object, which is an iterator of tuples where the first item in each passed iterator is paired together, and then the second item in each passed iterator are paired together etc.
+If the passed iterators have different lengths, the iterator with the least items decides the length of the new iterator.
+mylist1 = [1,2,3,4,5]
+mylist2 = ['a','b','c','d','e']
+
+for item1, item2 in zip(mylist1,mylist2):
+    print(item1,item2)
+1 a
+2 b
+3 c
+4 d
+5 e
+
+in, not in operator 
+TO check an object in element of a sequence like string, array, list, or tuple etc
+'x' in ['x','y','z']
+True
+
+min and max
+mylist = [10,20,30,40,100]
+min(mylist)
+10
+
+random library
+Python comes with a built in random library. There are a lot of functions included in this random library, so we will only show you two useful functions for now.
+from random import shuffle
+shuffle(mylist), in place function; doesnt return anything
+from random import randint
+randint(0,100)
+
+input
+always saves inputs as string
+result = input('Enter Something into this box: ')
+Enter Something into this box: great job!
+result type is string!! if a number is input then need to be transformed to int or float etc
+
+List Comprehensions
+build out lists using a different notation.
+a one line for loop built inside of brackets
+
+lst=[]
+for x in 'word'
+	lst.append[x]
+
+lst = [x for x in 'word']
+lst = ['w', 'o', 'r', 'd']
+
+also accepts IF
+
+lst = [x for x in 'word' if x != h] 
+
+also accepts if, else, but is hard to read. not recommended
+nested loops
+
+mylist = []
+for x in [2,4,6]:
+	for y in [1,10,1000]:
+		mylist.append(x*y)
+lst = [ x*y for x in [2,4,6] for y in [1,10,1000]
+
+Fucntions
+
+Snake casing, lower case separated by _
+return allows to assign the output of a funcion to a new variable if only print the result inside the function is not possible
+no need to check the data type of the arguments passed to the function because is dynamically typed but is important to verify user input
+One return is called the function finishes
+place holder variables are defined at the top of the function
+Logic to find a value (max, min etc) among possible options is to iterate over the options and save the current value on place holder, update place holder when the condition matches
+
+functions allow to save return on tuplets
+return (result1, result2)
+a,b = fucntion (result)
+or assing function to an item and know how many elemnts compose the return in case the function is not familiar
+item = fucntion (result)
+Function definitios in the top
+logic at the bottom
+
+*args : * to take in a variable number of arguments without having to define each one, by convention args is used but could be any other name. args maps to tuples
+**kwargs: same than args but maps to dictionary data type
+(*args,**kwargs) : also works, but te complying with the order. first args then kwargs.
+
+
+lambda expressions
+MAP and Filter
+
+MAP, apply a function to a list
+the function is used as an argument no need ()
+use with for loop or list ()
+lambda expression or anonymus function use when it can be easily read afte compressing it
+
+Variable scope
+LEGB
+to redefine a global variable inside a local scope
+use the global keyword to reach for the global varibale and affect it
+Avoy using global keyword, instead pass the variable as argument and assign the result of the function to the global variable
+is better that reasign internally because in case of a bug is hard to debug.
+
+The isdigit() method returns True if all characters in a string are digits. If not, it returns False. negatives return false
+use keyword in, to check if the given number is within acceptable values. 
+input in range(x-y)
+
+Decorators
+functions which modify the functionality of another function
+used a lot y web development, Django and flask
+Fucntions can be passed as an argument of another function
+a Function can return a function
+Wrap function can add code before or after the existing function
+
+def new_decorator(func):
+
+    def wrap_func():
+        print("Code would be here, before executing the func")
+
+        func()
+
+        print("Code here will execute after the func()")
+
+    return wrap_func
+
+def func_needs_decorator():
+    print("This function is in need of a Decorator")
+
+to use a decorator the syntax would be 
+func_needs_decorator = new_decorator(func_needs_decorator)
+to simplyfiy, the keyword @ before a function implies that a decorator will be applied to a function
+
+@new_decorator
+def func_needs_decorator():
+    print("This function is in need of a Decorator")
+
+Generators
+
+Sequence of values that dont hold space in memory
+Generator functios will automatically suspend and resulme their execution and state around the LAST POINT OF GENERATION
+still have the option to list(de generator)
+keyword yield allows to show current value of the iteration instead of using a variable to hold all values like in normal fnction
+the function next() allows to move from one yield value to the next one, after the last value it generates an error. a for loop does the same but caches the error and stops the loop
+iter() function to iterate convert string into iterators
+
+generator comprehension
+(<expression> for <var> in <iterable> if <condition>)
+is
+for <var> in <iterable>:
+    if bool(<condition>):
+        yield <expression>
